@@ -1,6 +1,6 @@
 # Projeto Huffman | Estrutura de Dados
 
-Projeto sobre o algoritmo de HUFFMAN da disciplina de Estrutura de Dados. 1º semestre(2024.1) do curso de Engenharia da Computação na UFAL: Universidade Federal de Alagoas.
+Projeto sobre o algoritmo de HUFFMAN e SAT solver, da disciplina de Estrutura de Dados. 2º semestre(2026.2) do curso de Engenharia da Computação na UFAL: Universidade Federal de Alagoas.
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/91018438/204195385-acc6fcd4-05a7-4f25-87d1-cb7d5cc5c852.png" alt="animated" />
@@ -9,7 +9,7 @@ Projeto sobre o algoritmo de HUFFMAN da disciplina de Estrutura de Dados. 1º se
 <center>
 Equipe:
 
-  | Narel Oliveira | Laryssa Calazans | Rafael Antonio | 
+  | Narel Oliveira | Laryssa Calazans | Rafael Antonio | Murilo
 
  </center>
 
