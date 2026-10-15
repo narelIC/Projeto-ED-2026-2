@@ -17,7 +17,7 @@ Equipe:
 
 O algoritmo de Huffman é uma técnica de compressão de dados sem perda que cria códigos binários de comprimento variável com base na frequência dos símbolos presentes em um conjunto de dados. O objetivo é representar os símbolos mais frequentes com códigos mais curtos e os símbolos menos frequentes com códigos mais longos, reduzindo, assim, o tamanho total do arquivo.
 
-## Instalação do programa
+## Instalação do programa com cmd
 
 <p>
 
@@ -30,19 +30,19 @@ O algoritmo de Huffman é uma técnica de compressão de dados sem perda que cri
 > Acesse o diretório do projeto seu terminal:
 >
 > ```
-> 	cd [Nome da pasta onde você salvou]
+> 	cd Projeto-ED-2026-2
 > ```
 >
 > Já no diretório da aplicação em seu terminal, digite o seguinte comando:
 >
 > ```
-> 	gcc -Iinc src/arvore.c src/compressao.c src/descompressao.c src/lista.c src/main.c -o projeto_huffman
+> 	gcc -Iinc src/arvore.c src/compressao.c src/descompressao.c src/lista.c src/main.c -o projeto_huffman.exe
 > ```
 >
 >     Logo depois, basta executar com o seguinte comando:
 >
 > ```
->         ./projeto_huffman
+>     projeto_huffman.exe
 > ```
 
   </p>

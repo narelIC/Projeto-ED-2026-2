@@ -30,6 +30,15 @@ unsigned long long int calcularTamanho(FILE *arquivo)
 
 void mapearBytesParaCodigos(node_t *tree_node, BitHuff table[], BitHuff codigo_parafolha)
 {
+<<<<<<< HEAD
+    // Arquivo vazio: não há árvore para mapear
+    if (tree_node == NULL)
+    {
+        return;
+    }
+
+=======
+>>>>>>> cff14ac56a4aca8378d83086016f7ef9da95d72b
     // Verifica se o nó atual é uma folha da árvore
     // Uma folha representa um caractere que será codificado
     if (tree_node->left == NULL && tree_node->right == NULL)
@@ -88,8 +97,13 @@ void mapearBytesParaCodigos(node_t *tree_node, BitHuff table[], BitHuff codigo_p
 
 int tamanho_lixo(int frequency[], BitHuff table[])
 {
+<<<<<<< HEAD
+    long long bits_antes = 0;
+    long long bits_depois = 0;
+=======
     long bits_antes = 0;
     long bits_depois = 0;
+>>>>>>> cff14ac56a4aca8378d83086016f7ef9da95d72b
 
     int i = 0;
     while (i < 256)
@@ -97,12 +111,20 @@ int tamanho_lixo(int frequency[], BitHuff table[])
         if (frequency[i] != 0)
         {
             // bits_antes é a quantidade de bits original (sem compressao)
+<<<<<<< HEAD
+            bits_antes += (long long)frequency[i] * 8;
+=======
             bits_antes += frequency[i] * 8;
+>>>>>>> cff14ac56a4aca8378d83086016f7ef9da95d72b
             // multiplicado por 8 pq i eh armazenado em um byte antes da compressao
 
             // bits_depois é a quantidade total de bits após a compressão
             // Usa o tamanho do código em huff armazenado em table[i].size
+<<<<<<< HEAD
+            bits_depois += (long long)frequency[i] * table[i].size;
+=======
             bits_depois += frequency[i] * table[i].size;
+>>>>>>> cff14ac56a4aca8378d83086016f7ef9da95d72b
         }
         i++;
     }
@@ -160,7 +182,13 @@ void escrever_arvore(FILE *file, node_t *arvore_b)
     { // se arvore for nula
         return;
     }
+<<<<<<< HEAD
+    unsigned char valor = recuperarByteDePonteiroVoid(arvore_b); // Recupera o byte (void *) do nó
+
+    if (arvore_b->left == NULL && arvore_b->right == NULL && (valor == '*' || valor == '\\'))
+=======
     if (arvore_b->left == NULL && arvore_b->right == NULL && (arvore_b->byte == '*' || arvore_b->byte == '\\'))
+>>>>>>> cff14ac56a4aca8378d83086016f7ef9da95d72b
     {
 
         // uint8_t representa um inteiro sem sinal de 8 bits
@@ -170,7 +198,11 @@ void escrever_arvore(FILE *file, node_t *arvore_b)
 
         fwrite(&scape, sizeof(uint8_t), 1, file); // file = arquivo_comprimido
     }
+<<<<<<< HEAD
+    uint8_t byte = valor;
+=======
     uint8_t byte = arvore_b->byte;
+>>>>>>> cff14ac56a4aca8378d83086016f7ef9da95d72b
 
     fwrite(&byte, sizeof(uint8_t), 1, file); // escreve em um arquivo comprimido
 

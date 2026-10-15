@@ -6,7 +6,11 @@
 
 typedef struct node
 {
+<<<<<<< HEAD
+  void *byte;         // Ponteiro void para o byte do arquivo que será compactado/descompactado
+=======
   char byte;          // Caractere do arquivo que será compactado/descompactado
+>>>>>>> cff14ac56a4aca8378d83086016f7ef9da95d72b
   int freq;           // A frequência que o caractere aparece no arquivo
   struct node *left;  // Nó filho esquerdo
   struct node *right; // Nó filho direito

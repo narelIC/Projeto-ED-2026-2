@@ -55,6 +55,17 @@ void test_tamanhoArvore()
 
     // Criação de nós
     node_t noA, noB, noC;
+<<<<<<< HEAD
+    noA.byte = ponteiroparaVoid('A');
+    noA.left = NULL;
+    noA.right = NULL;
+
+    noB.byte = ponteiroparaVoid('*'); // Caractere especial
+    noB.left = NULL;
+    noB.right = NULL;
+
+    noC.byte = ponteiroparaVoid('B');
+=======
     noA.byte = 'A';
     noA.left = NULL;
     noA.right = NULL;
@@ -64,6 +75,7 @@ void test_tamanhoArvore()
     noB.right = NULL;
 
     noC.byte = 'B';
+>>>>>>> cff14ac56a4aca8378d83086016f7ef9da95d72b
     noC.left = &noA;
     noC.right = &noB;
 
@@ -88,7 +100,11 @@ void test_inserir_ord()
     CU_ASSERT_PTR_NOT_NULL(n1);
     CU_ASSERT_EQUAL(head, n1);
     CU_ASSERT_EQUAL(n1->freq, 5);
+<<<<<<< HEAD
+    CU_ASSERT_EQUAL(recuperarByteDePonteiroVoid(n1), 'a');
+=======
     CU_ASSERT_EQUAL(n1->byte, 'a');
+>>>>>>> cff14ac56a4aca8378d83086016f7ef9da95d72b
     CU_ASSERT_PTR_NULL(n1->prox);
     CU_ASSERT_EQUAL(tamLista, 1);
 
@@ -96,7 +112,11 @@ void test_inserir_ord()
     node_t *n2 = inserir_ord(&head, 10, 'b', &tamLista);
     CU_ASSERT_PTR_NOT_NULL(n2);
     CU_ASSERT_EQUAL(n2->freq, 10);
+<<<<<<< HEAD
+    CU_ASSERT_EQUAL(recuperarByteDePonteiroVoid(n2), 'b');
+=======
     CU_ASSERT_EQUAL(n2->byte, 'b');
+>>>>>>> cff14ac56a4aca8378d83086016f7ef9da95d72b
     CU_ASSERT_PTR_NULL(n2->prox);
     CU_ASSERT_EQUAL(head->prox, n2); // n2 deve estar após n1
     CU_ASSERT_EQUAL(tamLista, 2);
@@ -105,7 +125,11 @@ void test_inserir_ord()
     node_t *n3 = inserir_ord(&head, 3, 'c', &tamLista);
     CU_ASSERT_PTR_NOT_NULL(n3);
     CU_ASSERT_EQUAL(n3->freq, 3);
+<<<<<<< HEAD
+    CU_ASSERT_EQUAL(recuperarByteDePonteiroVoid(n3), 'c');
+=======
     CU_ASSERT_EQUAL(n3->byte, 'c');
+>>>>>>> cff14ac56a4aca8378d83086016f7ef9da95d72b
     CU_ASSERT_PTR_EQUAL(n3->prox, n1); // n3 deve estar antes de n1
     CU_ASSERT_EQUAL(head, n3);
     CU_ASSERT_EQUAL(tamLista, 3);
@@ -114,7 +138,11 @@ void test_inserir_ord()
     node_t *n4 = inserir_ord(&head, 7, 'd', &tamLista);
     CU_ASSERT_PTR_NOT_NULL(n4);
     CU_ASSERT_EQUAL(n4->freq, 7);
+<<<<<<< HEAD
+    CU_ASSERT_EQUAL(recuperarByteDePonteiroVoid(n4), 'd');
+=======
     CU_ASSERT_EQUAL(n4->byte, 'd');
+>>>>>>> cff14ac56a4aca8378d83086016f7ef9da95d72b
     CU_ASSERT_PTR_EQUAL(n4->prox, n2); // n4 deve estar entre n1 e n2
     CU_ASSERT_EQUAL(n1->prox, n4);
     CU_ASSERT_EQUAL(tamLista, 4);
@@ -188,7 +216,11 @@ void test_escrever_arvore_simples()
     CU_ASSERT_PTR_NOT_NULL(file);
 
     node_t raiz;
+<<<<<<< HEAD
+    raiz.byte = ponteiroparaVoid('A');
+=======
     raiz.byte = 'A';
+>>>>>>> cff14ac56a4aca8378d83086016f7ef9da95d72b
     raiz.left = NULL;
     raiz.right = NULL;
 
@@ -230,9 +262,15 @@ void test_calcularTamanho()
 void test_mapearBytesParaCodigos()
 {
     // Configura a árvore de Huffman para o teste
+<<<<<<< HEAD
+    node_t folhaA = {.byte = ponteiroparaVoid('A'), .freq = 5, .left = NULL, .right = NULL};
+    node_t folhaB = {.byte = ponteiroparaVoid('B'), .freq = 3, .left = NULL, .right = NULL};
+    node_t raiz = {.byte = ponteiroparaVoid('*'), .freq = 8, .left = &folhaA, .right = &folhaB};
+=======
     node_t folhaA = {.byte = 'A', .freq = 5, .left = NULL, .right = NULL};
     node_t folhaB = {.byte = 'B', .freq = 3, .left = NULL, .right = NULL};
     node_t raiz = {.byte = '*', .freq = 8, .left = &folhaA, .right = &folhaB};
+>>>>>>> cff14ac56a4aca8378d83086016f7ef9da95d72b
 
     BitHuff table[256] = {0};                // Inicializa a tabela de códigos
     BitHuff codigo = {.bitH = 0, .size = 0}; // Código inicial vazio
@@ -241,8 +279,13 @@ void test_mapearBytesParaCodigos()
     mapearBytesParaCodigos(&raiz, table, codigo);
 
     // Verifica se os códigos foram mapeados corretamente
+<<<<<<< HEAD
+    CU_ASSERT_EQUAL(table[recuperarByteDePonteiroVoid(&folhaA)].bitH, 0b0); // 'A' deve ter código 0
+    CU_ASSERT_EQUAL(table[recuperarByteDePonteiroVoid(&folhaB)].bitH, 0b1); // 'B' deve ter código 1
+=======
     CU_ASSERT_EQUAL(table[(unsigned char)folhaA.byte].bitH, 0b0); // 'A' deve ter código 0
     CU_ASSERT_EQUAL(table[(unsigned char)folhaB.byte].bitH, 0b1); // 'B' deve ter código 1
+>>>>>>> cff14ac56a4aca8378d83086016f7ef9da95d72b
 }
 
 // Teste para a função tamanho_lixo
@@ -391,11 +434,19 @@ void test_montar_arvore(void)
 
     // Verificações da árvore montada
     CU_ASSERT_PTR_NOT_NULL(root);            // A raiz não deve ser nula
+<<<<<<< HEAD
+    CU_ASSERT_EQUAL(recuperarByteDePonteiroVoid(root), 'a');        // O primeiro caractere deve ser 'a'
+    CU_ASSERT_PTR_NOT_NULL(root->left);      // O filho esquerdo não deve ser nulo
+    CU_ASSERT_EQUAL(recuperarByteDePonteiroVoid(root->left), 'b');  // O filho esquerdo deve ser 'b'
+    CU_ASSERT_PTR_NOT_NULL(root->right);     // O filho direito não deve ser nulo
+    CU_ASSERT_EQUAL(recuperarByteDePonteiroVoid(root->right), 'c'); // O filho direito deve ser 'c'
+=======
     CU_ASSERT_EQUAL(root->byte, 'a');        // O primeiro caractere deve ser 'a'
     CU_ASSERT_PTR_NOT_NULL(root->left);      // O filho esquerdo não deve ser nulo
     CU_ASSERT_EQUAL(root->left->byte, 'b');  // O filho esquerdo deve ser 'b'
     CU_ASSERT_PTR_NOT_NULL(root->right);     // O filho direito não deve ser nulo
     CU_ASSERT_EQUAL(root->right->byte, 'c'); // O filho direito deve ser 'c'
+>>>>>>> cff14ac56a4aca8378d83086016f7ef9da95d72b
 
     // Libera a memória da árvore
     liberarArvore(root);
@@ -437,6 +488,17 @@ void test_removeCabeca()
 {
     // Cria uma lista encadeada com 3 nós
     node_t *head = malloc(sizeof(node_t));
+<<<<<<< HEAD
+    head->byte = ponteiroparaVoid('a');
+    head->freq = 1;
+
+    node_t *segundo = malloc(sizeof(node_t));
+    segundo->byte = ponteiroparaVoid('b');
+    segundo->freq = 2;
+
+    node_t *terceiro = malloc(sizeof(node_t));
+    terceiro->byte = ponteiroparaVoid('c');
+=======
     head->byte = 'a';
     head->freq = 1;
 
@@ -446,6 +508,7 @@ void test_removeCabeca()
 
     node_t *terceiro = malloc(sizeof(node_t));
     terceiro->byte = 'c';
+>>>>>>> cff14ac56a4aca8378d83086016f7ef9da95d72b
     terceiro->freq = 3;
 
     head->prox = segundo;
@@ -459,12 +522,20 @@ void test_removeCabeca()
 
     // Verifica se o nó removido é o esperado
     CU_ASSERT_PTR_NOT_NULL(removido);     // Verifica se o nó removido não é NULL
+<<<<<<< HEAD
+    CU_ASSERT_EQUAL(recuperarByteDePonteiroVoid(removido), 'a'); // Verifica se o byte do nó removido é 'a'
+=======
     CU_ASSERT_EQUAL(removido->byte, 'a'); // Verifica se o byte do nó removido é 'a'
+>>>>>>> cff14ac56a4aca8378d83086016f7ef9da95d72b
     CU_ASSERT_EQUAL(removido->freq, 1);   // Verifica se a frequência do nó removido é 1
 
     // Verifica se a cabeça da lista agora aponta para o segundo nó
     CU_ASSERT_PTR_NOT_NULL(head);     // Verifica se a nova cabeça não é NULL
+<<<<<<< HEAD
+    CU_ASSERT_EQUAL(recuperarByteDePonteiroVoid(head), 'b'); // Verifica se a nova cabeça é o segundo nó
+=======
     CU_ASSERT_EQUAL(head->byte, 'b'); // Verifica se a nova cabeça é o segundo nó
+>>>>>>> cff14ac56a4aca8378d83086016f7ef9da95d72b
     CU_ASSERT_EQUAL(tamLista, 2);     // Verifica se o tamanho da lista foi atualizado corretamente
 
     // Libera a memória
@@ -526,7 +597,11 @@ void test_recuperarByteDePonteiroVoid()
     node_t *no = malloc(sizeof(node_t)); // Aloca memória para o nó
     CU_ASSERT_PTR_NOT_NULL(no);          // Verifica se a alocação foi bem-sucedida
 
+<<<<<<< HEAD
+    no->byte = ponteiroparaVoid('X');                                            // Define o byte para um valor conhecido
+=======
     no->byte = 'X';                                            // Define o byte para um valor conhecido
+>>>>>>> cff14ac56a4aca8378d83086016f7ef9da95d72b
     unsigned char resultado = recuperarByteDePonteiroVoid(no); // Chama a função
 
     // Verifica se o resultado é o esperado
@@ -545,7 +620,11 @@ void test_criarNo()
     CU_ASSERT_PTR_NOT_NULL(no);             // Verifica se o nó foi alocado corretamente
 
     // Verifica se o byte e a frequência estão corretos
+<<<<<<< HEAD
+    CU_ASSERT_EQUAL(recuperarByteDePonteiroVoid(no), byte);
+=======
     CU_ASSERT_EQUAL(no->byte, byte);
+>>>>>>> cff14ac56a4aca8378d83086016f7ef9da95d72b
     CU_ASSERT_EQUAL(no->freq, frequency);
 
     // Libera a memória alocada

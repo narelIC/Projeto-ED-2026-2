@@ -104,10 +104,17 @@ void recuperar_bytes(FILE *fileIn, FILE *fileOut, short int trashSize, unsigned 
     unsigned char byte;                           // Armazena o byte lido do arquivo
     node_t *aux = huffTree;                       // Ponteiro auxiliar para percorrer a árvore de Huffman
     int bitPosition = 0;                          // Controla a posição do bit dentro de cada byte
+<<<<<<< HEAD
+    unsigned long long int bitsToProcess = sizeFile * 8 - trashSize; // Número total de bits a processar, descontando o lixo no último byte
+
+    // Itera enquanto houver bits para processar
+    for (unsigned long long int bitIndex = 0; bitIndex < bitsToProcess; bitIndex++)
+=======
     int bitsToProcess = sizeFile * 8 - trashSize; // Número total de bits a processar, descontando o lixo no último byte
 
     // Itera enquanto houver bits para processar
     for (int bitIndex = 0; bitIndex < bitsToProcess; bitIndex++)
+>>>>>>> cff14ac56a4aca8378d83086016f7ef9da95d72b
     {
         // A cada múltiplo de 8, lemos um novo byte
         if (bitIndex % 8 == 0)
