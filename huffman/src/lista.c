@@ -40,11 +40,7 @@ node_t *inserir_ord(node_t **head, int freq, char byte, int *tamLista)
 
     node_t *novo = (node_t *)malloc(sizeof(node_t)); // cria um ponteiro do tipo nó e aloca dinamicamente na memória o espaço de um nó;
     novo->freq = freq;                               // atualiza a variável freq do nó nomeado novo, com o valor recebido na entrada da função de inserir
-<<<<<<< HEAD
     novo->byte = ponteiroparaVoid(byte);             // atualiza a variável byte (void *) com o caractere recebido na entrada da função
-=======
-    novo->byte = *((char *)ponteiroparaVoid(byte));  // atualiza a variável byte com o caractere recebido na entrada da função
->>>>>>> cff14ac56a4aca8378d83086016f7ef9da95d72b
     novo->left = NULL;                               // filho 1 aponta para NULL
     novo->right = NULL;                              // filho 2 aponta para NULL
 
@@ -121,11 +117,7 @@ node_t *listFreq(FILE *arq, int frequencias[256], int *tamLista)
 
 unsigned char recuperarByteDePonteiroVoid(void *byte)
 {
-<<<<<<< HEAD
     unsigned char *item = (unsigned char *)((node_t *)byte)->byte;
-=======
-    unsigned char *item = &((node_t *)byte)->byte;
->>>>>>> cff14ac56a4aca8378d83086016f7ef9da95d72b
     return *item;
 }
 
@@ -136,11 +128,7 @@ node_t *criarNo(void *byte, int frequency)
     newNode->prox = NULL;
     newNode->left = NULL;
     newNode->right = NULL;
-<<<<<<< HEAD
     newNode->byte = byte;
-=======
-    newNode->byte = *(char *)byte;
->>>>>>> cff14ac56a4aca8378d83086016f7ef9da95d72b
     newNode->freq = frequency;
     return newNode;
 }

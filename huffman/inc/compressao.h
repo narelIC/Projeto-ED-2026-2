@@ -8,11 +8,7 @@
 
 typedef struct bithuff
 {
-<<<<<<< HEAD
   unsigned long long int bitH;
-=======
-  int bitH;
->>>>>>> cff14ac56a4aca8378d83086016f7ef9da95d72b
   int size;
 } BitHuff;
 

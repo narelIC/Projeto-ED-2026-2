@@ -10,7 +10,6 @@
 node_t *arvoreHuff(node_t **head, int *tamLista)
 {
 
-<<<<<<< HEAD
     node_t *left, *right, *Pai = NULL;
 
     // Caso especial: arquivo com apenas um tipo de byte.
@@ -22,9 +21,6 @@ node_t *arvoreHuff(node_t **head, int *tamLista)
         Pai->left = left;
         return Pai;
     }
-=======
-    node_t *left, *right, *Pai;
->>>>>>> cff14ac56a4aca8378d83086016f7ef9da95d72b
 
     while (*tamLista > 1)
     {
@@ -60,11 +56,7 @@ int tamanhoArvore(node_t *no)
     int esq = tamanhoArvore(no->left);
     int dir = tamanhoArvore(no->right);
 
-<<<<<<< HEAD
     unsigned char x = recuperarByteDePonteiroVoid(no); // Recupera o byte (void *) do nó
-=======
-    unsigned char x = no->byte; // Acessa diretamente o byte do nó
->>>>>>> cff14ac56a4aca8378d83086016f7ef9da95d72b
 
     // Caso especial para caracteres '*' e '\\', onde precisamos contabilizar um valor especial para nós folha
     if ((((x == '*') || (x == '\\')) && ehFolha(&no)))
