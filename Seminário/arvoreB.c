@@ -149,6 +149,17 @@ void liberarArvore(No *no) {
     free(no);
 }
 
+int printFolha(No *raiz){
+    if(raiz->folha) return 1;
+    int f= 0;
+    int n= raiz->numChaves;
+    for(int i=0; i<=n; i++){
+     f += printFolha(raiz->filhos[i]);
+    }
+    printf("Numero de Folhas: %d\n", f);
+    return f;
+}
+
 int main(void) {
     int valores[] = {10, 20, 5, 7, 12, 15, 25, 30};
 
@@ -157,7 +168,7 @@ No *raiz = criarNo(1);
 for (int i = 0; i < 8; i++) {
     inserir(&raiz, valores[i]);
 }
-
+    printFolha(raiz);
     int valor;
 
     printf("Digite o valor que deseja buscar: ");
